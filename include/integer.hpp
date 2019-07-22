@@ -62,4 +62,28 @@ T modpow(T base, T exp, T mod)
     return res;
 }
 
+/*!
+@fn is_prime
+@brief xが素数かどうかを判定する
+*/
+template<class T>
+bool is_prime(T x)
+{
+    if (x == 2) {
+        return true;
+    }
+
+    if (x % 2 == 0) {
+        return false;
+    }
+
+    for (T i = 3; i * i <= x; i += 2) {
+        if (x % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 #endif

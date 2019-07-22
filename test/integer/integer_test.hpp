@@ -23,9 +23,20 @@ void modpow_test()
     eassert(modpow(3, 4, 5) == 1, "modpow(3, 4, 5) == %d", modpow(3, 4, 5));
 }
 
+void is_prime_test()
+{
+    eassert(is_prime(2) == true, "is_prime(2) == %d", is_prime(2));
+    eassert(is_prime(3) == true, "is_prime(3) == %d", is_prime(3));
+    eassert(is_prime(4) == false, "is_prime(4) == %d", is_prime(4));
+    eassert(is_prime(17) == true, "is_prime(17) == %d", is_prime(17));
+    eassert(is_prime(23) == true, "is_prime(23) == %d", is_prime(23));
+    eassert(is_prime(45) == false, "is_prime(45) == %d", is_prime(45));
+}
+
 void integer_test()
 {
     gcd_test();
     lcm_test();
     modpow_test();
+    is_prime_test();
 }
