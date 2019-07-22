@@ -10,6 +10,13 @@ void gcd_test()
     eassert(gcd(24, 36) == 12, "gcd(24, 36) == %d", gcd(24, 36));
 }
 
+void lcm_test()
+{
+    eassert(lcm(1, 3) == 3, "lcm(1, 3) == %d", lcm(1, 3));
+    eassert(lcm(2, 3) == 6, "lcm(2, 3) == %d", lcm(2, 3));
+    eassert(lcm(3, 2) == 6, "lcm(3, 2) == %d", lcm(3, 2));
+}
+
 void modpow_test()
 {
     eassert(modpow(2, 5, 3) == 2, "modpow(2, 5, 3) == %d", modpow(2, 5, 3));
@@ -19,5 +26,6 @@ void modpow_test()
 void integer_test()
 {
     gcd_test();
+    lcm_test();
     modpow_test();
 }
