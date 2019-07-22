@@ -15,6 +15,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(target a.out)
 set(source_dir ./src)
 
-# include_directories("./include")
+include_directories("./include")
 
 add_executable(${target} ${source_dir}/main.cpp)
+
+enable_testing()
+add_subdirectory("./test")
