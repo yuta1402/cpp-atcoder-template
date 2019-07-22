@@ -31,6 +31,16 @@ T gcd(T x, T y)
 }
 
 /*!
+@fn lcm
+@brief lcm(x, y)
+*/
+template<class T>
+T lcm(T x, T y)
+{
+    return x / gcd(x, y) * y;
+}
+
+/*!
 @fn modpow
 @brief base^exp % mod
 */
