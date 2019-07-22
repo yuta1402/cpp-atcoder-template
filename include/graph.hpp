@@ -60,4 +60,38 @@ vector<T> dijkstra(T s, const WeightedGraph<T>& g)
     return d;
 }
 
+/*!
+@fn warshall_floyd
+@brief 重み付き有向グラフにおける全点対間最短路を計算する
+*/
+template<class T>
+vector<vector<T>> warshall_floyd(const WeightedGraph<T>& g)
+{
+    const auto INF = numeric_limits<T>::max();
+    vector<vector<T>> d(g.size(), vector<T>(g.size(), INF));
+
+    for (size_t i = 0; i < g.size(); ++i) {
+        d[i][i] = 0;
+    }
+
+    for (size_t i = 0; i < g.size(); ++i) {
+        for (const auto& e : g[i]) {
+            d[i][e.to] = e.cost;
+        }
+    }
+
+    for (size_t k = 0; k < g.size(); ++k) {
+        for (size_t i = 0; i < g.size(); ++i) {
+            for (size_t j = 0; j < g.size(); ++j) {
+                if (d[i][k] == INF || d[k][j] == INF) {
+                    continue;
+                }
+                d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
+            }
+        }
+    }
+
+    return d;
+}
+
 #endif
