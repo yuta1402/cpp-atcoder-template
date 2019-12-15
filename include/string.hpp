@@ -8,13 +8,14 @@ using namespace std;
 
 vector<int> z_algorithm(const string& s)
 {
-    vector<int> z(s.size());
-    z[0] = s.size();
+    const int n = s.size();
+    vector<int> z(n);
+    z[0] = n;
 
     int i = 1;
     int j = 0;
-    while (i < s.size()) {
-        while (i+j < s.size() && s[j] == s[i+j]) {
+    while (i < n) {
+        while (i+j < n && s[j] == s[i+j]) {
             ++j;
         }
         z[i] = j;
@@ -24,7 +25,7 @@ vector<int> z_algorithm(const string& s)
         }
 
         int k = 1;
-        while (i+k < s.size() && k+z[k] < j) {
+        while (i+k < n && k+z[k] < j) {
             z[i+k] = z[k];
             ++k;
         }
