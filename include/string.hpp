@@ -6,6 +6,10 @@
 
 using namespace std;
 
+/*!
+@fn z_algorithm
+@brief 長さNの文字列Sについて, S[0:N-1]とS[i:N-1] (0 < i < N)の最長共通接頭辞の長さを求める
+*/
 vector<int> z_algorithm(const string& s)
 {
     const int n = s.size();
