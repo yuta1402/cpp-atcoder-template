@@ -6,3 +6,4 @@ include_directories(
 
 add_subdirectory("./graph")
 add_subdirectory("./integer")
+add_subdirectory("./string")
